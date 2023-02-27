@@ -1,0 +1,54 @@
+MATRIZ INICIAL PRUEBA
+
+class Order():
+    def __init__(self):
+        self.piece =[
+            ["--", "rn", "--", "fn", "--", "fn", "--", "fn"],
+            ["fn", "--", "fn", "--", "fn", "--", "fn", "--"],
+            ["--", "fn", "--", "rn", "--", "fn", "--", "fn"],
+            ["--", "--", "--", "--", "--", "--", "--", "--"],
+            ["--", "--", "--", "--", "--", "--", "--", "--"],
+            ["rb", "--", "fb", "--", "fb", "--", "fb", "--"],
+            ["--", "fb", "--", "fb", "--", "fb", "--", "fb"],
+            ["fb", "--", "fb", "--", "fb", "--", "fb", "--"]]
+
+
+
+MATRIZ PRUEBA DE GANADOR
+
+class Order():
+    def __init__(self):
+        self.piece =[
+            ["--", "--", "--", "--", "--", "--", "--", "--"],
+            ["--", "--", "--", "--", "--", "--", "--", "--"],
+            ["--", "--", "--", "rn", "--", "--", "--", "--"],
+            ["--", "--", "--", "--", "--", "--", "--", "--"],
+            ["--", "--", "--", "--", "--", "--", "--", "--"],
+            ["rb", "--", "fb", "--", "fb", "--", "fb", "--"],
+            ["--", "fb", "--", "fb", "--", "fb", "--", "fb"],
+            ["fb", "--", "fb", "--", "fb", "--", "fb", "--"]]
+
+POSICIÓN PARA REINA
+
+
+CONVERTIR EN REINA BLANCA(AZUL):
+
+	(0,1) (0,3) (0,5) (0,7)
+
+CONVERTIR EN REINA NEGRA(ROJO):
+
+	(7,0) (7,2) (7,4( (7,6)
+
+
+
+
+arreglar de los bordes para que no se salga cuando quiere matar
+
+ if gs.piece[0][1] == "fb":
+        gs.piece[0][1] == "rb"
+    if gs.piece[0][3] == "fb":
+        gs.piece[0][3] == "rb"
+    if gs.piece[0][5] == "fb":
+        gs.piece[0][5] == "rb"
+    if gs.piece[0][7] == "fb":
+        gs.piece[0][7] == "rb"
