@@ -15,7 +15,7 @@ moves = []
 win = False
 first_move = []
 mato = False
-turno =True
+turro =True
 
 # metodo ara verificar movimientos validos
 def sel_piece(row, col):
@@ -24,10 +24,10 @@ def sel_piece(row, col):
     muertoy =0
     first_move = [row, col]
 
-    if gs.piece[row][col] == "fb":
+    if gs.piece[row][col] == "fa":
         if row > 0: # para verificar el borde
             if col < 7:
-                if gs.piece[row-1][col+1] == "fn" or gs.piece[row-1][col+1] == "rn": # Para saber si puede matar
+                if gs.piece[row-1][col+1] == "fr" or gs.piece[row-1][col+1] == "rr": # Para saber si puede matar
                     if row-2 >= 0 and col+2 < 8:
                         if gs.piece[row-2][col+2] == "--":
                             moves.append([row-2, col+2, 1])
@@ -36,7 +36,7 @@ def sel_piece(row, col):
                 if gs.piece[row-1][col+1] == "--":
                     moves.append([row-1, col+1, 0])
             if col > 0:
-                if gs.piece[row-1][col-1] == "fn"or gs.piece[row-1][col-1] == "rn":
+                if gs.piece[row-1][col-1] == "fr"or gs.piece[row-1][col-1] == "rr":
                     if row-2 >= 0 and col-2 >= 0:
                         if gs.piece[row-2][col-2] == "--":
                             moves.append([row-2, col-2, 1])
@@ -48,10 +48,10 @@ def sel_piece(row, col):
         print("  Fila   Columna")
         for move in moves:
             print("*(",move[0],"      ",move[1],")")
-    elif gs.piece[row][col] == "fn":
+    elif gs.piece[row][col] == "fr":
         if row < 7:
             if col < 7:
-                if gs.piece[row+1][col+1] == "fb" or gs.piece[row+1][col+1] == "rb":
+                if gs.piece[row+1][col+1] == "fa" or gs.piece[row+1][col+1] == "ra":
                     if row+2 < 8 and col+2 < 8:
                         if gs.piece[row+2][col+2] == "--":
                             moves.append([row+2, col+2, 1])
@@ -60,7 +60,7 @@ def sel_piece(row, col):
                 if gs.piece[row+1][col+1] == "--":
                     moves.append([row+1, col+1, 0])
             if col > 0:
-                if gs.piece[row+1][col-1] == "fb" or gs.piece[row+1][col-1] == "rb":
+                if gs.piece[row+1][col-1] == "fa" or gs.piece[row+1][col-1] == "ra":
                     if row+2 < 8 and col-2 >= 0:
                         if gs.piece[row+2][col-2] == "--":
                             moves.append([row+2, col-2, 1])
@@ -72,10 +72,10 @@ def sel_piece(row, col):
         print("  Fila   Columna")
         for move in moves:
             print("*(",move[0],"      ",move[1],")")
-    elif gs.piece[row][col] == "rb":
+    elif gs.piece[row][col] == "ra":
         if row > 0:
             if col < 7:
-                if gs.piece[row-1][col+1] == "fn" or gs.piece[row-1][col+1] == "rn":
+                if gs.piece[row-1][col+1] == "fr" or gs.piece[row-1][col+1] == "rr":
                     if row-2 >= 0 and col+2 < 8:
                         if gs.piece[row-2][col+2] == "--":
                             moves.append([row-2, col+2, 1])
@@ -84,7 +84,7 @@ def sel_piece(row, col):
                 if gs.piece[row-1][col+1] == "--":
                     moves.append([row-1, col+1, 0])
             if col > 0:
-                if gs.piece[row-1][col-1] == "fn"or gs.piece[row-1][col-1] == "rn":
+                if gs.piece[row-1][col-1] == "fr"or gs.piece[row-1][col-1] == "rr":
                     if row-2 >= 0 and col-2 >= 0:
                         if gs.piece[row-2][col-2] == "--":
                             moves.append([row-2, col-2, 1])
@@ -94,7 +94,7 @@ def sel_piece(row, col):
                     moves.append([row-1, col-1, 0])
         if row < 7:
             if col < 7:
-                if gs.piece[row+1][col+1] == "fn" or gs.piece[row+1][col+1] == "rn":
+                if gs.piece[row+1][col+1] == "fr" or gs.piece[row+1][col+1] == "rr":
                     if row+2 < 8 and col+2 < 8:
                         if gs.piece[row+2][col+2] == "--":
                             moves.append([row+2, col+2, 1])
@@ -103,7 +103,7 @@ def sel_piece(row, col):
                 if gs.piece[row+1][col+1] == "--":
                     moves.append([row+1, col+1, 0])
             if col > 0:
-                if gs.piece[row+1][col-1] == "fn" or gs.piece[row+1][col-1] == "rn":
+                if gs.piece[row+1][col-1] == "fr" or gs.piece[row+1][col-1] == "rr":
                     if row+2 < 8 and col-2 >= 0:
                         if gs.piece[row+2][col-2] == "--":
                             moves.append([row+2, col-2, 1])
@@ -115,10 +115,10 @@ def sel_piece(row, col):
         print("  Fila   Columna")
         for move in moves:
             print("*(",move[0],"      ",move[1],")")
-    elif gs.piece[row][col] == "rn":
+    elif gs.piece[row][col] == "rr":
         if row > 0:
             if col < 7:
-                if gs.piece[row-1][col+1] == "fb" or gs.piece[row-1][col+1] == "rb":
+                if gs.piece[row-1][col+1] == "fa" or gs.piece[row-1][col+1] == "ra":
                     if row-2 >= 0 and col+2 < 8:
                         if gs.piece[row-2][col+2] == "--":
                             moves.append([row-2, col+2, 1])
@@ -128,7 +128,7 @@ def sel_piece(row, col):
                 if gs.piece[row-1][col+1] == "--":
                     moves.append([row-1, col+1, 0])
             if col > 0:
-                if gs.piece[row-1][col-1] == "fb" or gs.piece[row-1][col-1] == "rb":
+                if gs.piece[row-1][col-1] == "fa" or gs.piece[row-1][col-1] == "ra":
                     if row-2 >= 0 and col-2 >= 0:
                         if gs.piece[row-2][col-2] == "--":
                             moves.append([row-2, col-2, 1])
@@ -138,7 +138,7 @@ def sel_piece(row, col):
                     moves.append([row-1, col-1, 0])
         if row < 7:
             if col < 7:
-                if gs.piece[row+1][col+1] == "fb" or gs.piece[row+1][col+1] == "rb":
+                if gs.piece[row+1][col+1] == "fa" or gs.piece[row+1][col+1] == "ra":
                     if row+2 < 8 and col+2 < 8:    
                         if gs.piece[row+2][col+2] == "--":
                             moves.append([row+2, col+2, 1])
@@ -147,7 +147,7 @@ def sel_piece(row, col):
                 if gs.piece[row+1][col+1] == "--":
                     moves.append([row+1, col+1, 0])
             if col > 0:
-                if gs.piece[row+1][col-1] == "fb" or gs.piece[row+1][col-1] == "rb":
+                if gs.piece[row+1][col-1] == "fa" or gs.piece[row+1][col-1] == "ra":
                     if row+2 < 8 and col-2 >= 0:
                         if gs.piece[row+2][col-2] == "--":
                             moves.append([row+2, col-2, 1])
@@ -181,18 +181,18 @@ def sel_piece(row, col):
 
 
 def move_piece(row, col, row2, col2, muertox, muertoy):
-    global moves, turno
+    global moves, turro
     #print("oreigen:",row, col," destino: ", row2, col2)
 
     if[row2, col2, 0] in moves:
         gs.piece[row2][col2] = gs.piece[row][col]
         gs.piece[row][col] = "--"
-        turno = not turno
+        turro = not turro
     elif[row2, col2, 1] in moves:
         gs.piece[row2][col2] = gs.piece[row][col]
         gs.piece[row][col] = "--"
         gs.piece[muertox][muertoy] = "--"
-        turno = not turno
+        turro = not turro
     else:
         if row==row2 and col==col2:
             viewTable()
@@ -200,37 +200,37 @@ def move_piece(row, col, row2, col2, muertox, muertoy):
             print("Movimiento inválido")
 def reinas():
     #para convertir en reina azul
-    if gs.piece[0][1] == "fb":
-        gs.piece[0][1] = "rb"
-    if gs.piece[0][3] == "fb":
-        gs.piece[0][3] = "rb"
-    if gs.piece[0][5] == "fb":
-        gs.piece[0][5] = "rb"
-    if gs.piece[0][7] == "fb":
-        gs.piece[0][7] = "rb"
+    if gs.piece[0][1] == "fa":
+        gs.piece[0][1] = "ra"
+    if gs.piece[0][3] == "fa":
+        gs.piece[0][3] = "ra"
+    if gs.piece[0][5] == "fa":
+        gs.piece[0][5] = "ra"
+    if gs.piece[0][7] == "fa":
+        gs.piece[0][7] = "ra"
 
     #para convertir en reina roja
 
-    if gs.piece[7][0] == "fb":
-        gs.piece[7][0] = "rb"
-    if gs.piece[7][2] == "fb":
-        gs.piece[7][2] = "rb"
-    if gs.piece[7][4] == "fb":
-        gs.piece[7][4] = "rb"
-    if gs.piece[7][6] == "fb":
-        gs.piece[7][6] = "rb"
+    if gs.piece[7][0] == "fr":
+        gs.piece[7][0] = "rr"
+    if gs.piece[7][2] == "fr":
+        gs.piece[7][2] = "rr"
+    if gs.piece[7][4] == "fr":
+        gs.piece[7][4] = "rr"
+    if gs.piece[7][6] == "fr":
+        gs.piece[7][6] = "rr"
 
 #MOSTRAR TABLERO
 def instructions():
-    print("**************************************")
-    print(" BIENVENIDO AL JUEGO DE DAMAS INGLESAS")
-    print("**************************************")
-    print("Para tener en cuenta las fichas de los ")
-    print("jugadores están identificadas así: 'fn'")
-    print("significa ficha negra, 'fb' siganifica ")
-    print("ficha blanca, 'rn' significa reina ")
-    print("negra, 'rb' significa reina blanca")
-    print("**************************************")
+    print("*******************************************")
+    print("    BIENVENIDO AL JUEGO DE DAMAS INGLESAS")
+    print("*******************************************")
+    print("  Para tener en cuenta las fichas de los ")
+    print("  jugadores están identificadas así: 'fr'")
+    print("  significa ficha roja, 'fa' siganifica ")
+    print("  ficha azul, 'rr' significa reina roja,")
+    print("  'ra' significa reina azul")
+    print("******************************************")
     print("")
     print("************************************************")
     print("                    TABLERO")
@@ -239,7 +239,7 @@ def instructions():
 
 
 def viewTable():
-    global turno, win
+    global turro, win
     filas=[' ','F','I','L','A','S',' ',' ']
     print("            C O L U M N A S")
     print(" 0   1    2    3    4    5    6    7")
@@ -250,12 +250,12 @@ def viewTable():
         for col in range(board_size):
             if gs.piece[row][col]=="--":
                 print(Fore.WHITE + gs.piece[row][col], "  ", end="")
-            elif gs.piece[row][col]=="fb" or gs.piece[row][col]=="rb":
+            elif gs.piece[row][col]=="fa" or gs.piece[row][col]=="ra":
                 print(Fore.BLUE + gs.piece[row][col],"  ", end="")
-            elif gs.piece[row][col]=="fn" or gs.piece[row][col]=="rn":
+            elif gs.piece[row][col]=="fr" or gs.piece[row][col]=="rr":
                 print(Fore.RED + gs.piece[row][col],"  ", end="")
         print( " ", Fore.WHITE+"{}".format(row)," ",filas[row])
-    if turno:
+    if turro:
         print("Juega Azul")
         x = input("Indique la fila de la ficha que desea mover")
         if(x!=""):
@@ -270,8 +270,8 @@ def viewTable():
                     print("no existe columna  ", y)
                     viewTable()
                 else:
-                    if(gs.piece[x][y]=="fn" or gs.piece[x][y]=="rn"):
-                        print("No es turno de Rojo")
+                    if(gs.piece[x][y]=="fr" or gs.piece[x][y]=="rr"):
+                        print("No es turro de Rojo")
                         viewTable()
                     else:
                         sel_piece(x,y)
@@ -296,8 +296,8 @@ def viewTable():
                     print("no existe columna  ", y)
                     viewTable()
                 else:
-                    if(gs.piece[x][y]=="fb" or gs.piece[x][y]=="rb"):
-                        print("No es turno de Azul")
+                    if(gs.piece[x][y]=="fa" or gs.piece[x][y]=="ra"):
+                        print("No es turro de Azul")
                         viewTable()
                     else:
                         sel_piece(x,y)
@@ -312,9 +312,9 @@ def viewTable():
     contB = 0
     for row in gs.piece:
         for elemento in row:
-            if elemento == "fb":
+            if elemento == "fa":
                 contW+=1
-            elif elemento == "fn" or elemento =="rn":
+            elif elemento == "fr" or elemento =="rr":
                 contB+=1
     if contB == 0:
         print("Azul ha ganado")
