@@ -226,6 +226,9 @@ def sel_piece(row, col):
             y1 = int(y1)
             move_piece(first_move[0], first_move[1], x1, y1, muertox, muertoy)
     else:
+        print("Por favor selecciona un espacio valido")
+        auxDis.clear()
+        moves.clear()
         sel_piece(row, col)
     moves.clear()
     mato = False
