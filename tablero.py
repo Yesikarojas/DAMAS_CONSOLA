@@ -35,8 +35,7 @@ def posibleMov(moves):
                     if row==move[0] and col==move[1]:
                         print(Fore.YELLOW + "○○  ", end=" ")
                         aux = True
-                        
-                        
+                                   
                 if aux==True:
                     aux=False
                    
@@ -50,8 +49,6 @@ def posibleMov(moves):
                 
 
         print( " ", Fore.WHITE+"{}".format(row)," ",filas[row])
-
-
 
 
 
@@ -219,9 +216,9 @@ def sel_piece(row, col):
 
 
     x1 = input("Indique la fila del campoal cual desea mover su ficha")
-    if(x1!=""):
+    if(x1!="" and x1.isdigit()):
         y1 = input("Indique la fila del campoal cual desea mover su ficha")
-        if(y1!=""):
+        if(y1!="" and y1.isdigit()):
             x1 = int(x1)
             y1 = int(y1)
             move_piece(first_move[0], first_move[1], x1, y1, muertox, muertoy)
@@ -313,9 +310,9 @@ def viewTable():
     if turro:
         print("Juega Azul")
         x = input("Indique la fila de la ficha que desea mover")
-        if(x!=""):
+        if(x!="" and x.isdigit()):
             y = input("Indique la columna de la ficha que desea mover")
-            if (y!=""):
+            if (y!="" and y.isdigit()):
                 x = int(x)
                 y = int(y)
                 if x>8:
@@ -339,9 +336,9 @@ def viewTable():
     else:
         print("Juega Rojo")
         x = input("Indique la fila de la ficha que desea mover")
-        if(x!=""):
+        if(x!="" and x.isdigit()):
             y = input("Indique la columna de la ficha que desea mover")
-            if (y!=""):
+            if (y!="" and y.isdigit()):
                 x = int(x)
                 y = int(y)
                 if x>8:
