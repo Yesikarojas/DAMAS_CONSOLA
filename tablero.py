@@ -16,6 +16,44 @@ win = False
 first_move = []
 mato = False
 turro =True
+auxDis =[]
+
+def posibleMov(moves):
+
+    global turro, win
+    filas=[' ','F','I','L','A','S',' ',' ']
+    print("            C O L U M N A S")
+    print(" 0   1    2    3    4    5    6    7")
+    print("__________________________________________")
+    reinas()
+    board_size = 8
+    aux = False
+    for row in range(board_size):
+        for col in range(board_size):
+                
+                for move in moves:
+                    if row==move[0] and col==move[1]:
+                        print(Fore.YELLOW + "○○  ", end=" ")
+                        aux = True
+                        
+                        
+                if aux==True:
+                    aux=False
+                   
+                else:
+                    if gs.piece[row][col]=="--":
+                        print(Fore.WHITE + gs.piece[row][col], "  ", end="")
+                    elif gs.piece[row][col]=="fa" or gs.piece[row][col]=="ra":
+                        print(Fore.BLUE + gs.piece[row][col],"  ", end="")
+                    elif gs.piece[row][col]=="fr" or gs.piece[row][col]=="rr":
+                        print(Fore.RED + gs.piece[row][col],"  ", end="")
+                
+
+        print( " ", Fore.WHITE+"{}".format(row)," ",filas[row])
+
+
+
+
 
 # metodo ara verificar movimientos validos
 def sel_piece(row, col):
@@ -48,6 +86,10 @@ def sel_piece(row, col):
         print("  Fila   Columna")
         for move in moves:
             print("*(",move[0],"      ",move[1],")")
+            auxDis.append([move[0], move[1]])
+        posibleMov(auxDis)
+        auxDis.clear()
+
     elif gs.piece[row][col] == "fr":
         if row < 7:
             if col < 7:
@@ -72,6 +114,10 @@ def sel_piece(row, col):
         print("  Fila   Columna")
         for move in moves:
             print("*(",move[0],"      ",move[1],")")
+            auxDis.append([move[0], move[1]])
+        posibleMov(auxDis)
+        auxDis.clear()
+
     elif gs.piece[row][col] == "ra":
         if row > 0:
             if col < 7:
@@ -115,6 +161,10 @@ def sel_piece(row, col):
         print("  Fila   Columna")
         for move in moves:
             print("*(",move[0],"      ",move[1],")")
+            auxDis.append([move[0], move[1]])
+        posibleMov(auxDis)
+        auxDis.clear()
+
     elif gs.piece[row][col] == "rr":
         if row > 0:
             if col < 7:
@@ -159,8 +209,10 @@ def sel_piece(row, col):
         
         print("  Fila   Columna")
         for move in moves:
-            
             print("*(",move[0],"      ",move[1],")")
+            auxDis.append([move[0], move[1]])
+        posibleMov(auxDis)
+        auxDis.clear()
     else:
         print("No hay ficha en ese campo")
         viewTable()
